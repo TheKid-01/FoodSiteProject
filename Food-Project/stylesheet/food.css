@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background: #000;
+
+}
+
+
+
+.header{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   grid-area: header;
+   width: 100%;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 90%;
+    color: floralwhite;
+    background: #101010;
+    border-radius: 12px;
+    padding: 0.6rem 1rem;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+.feature-yellow{
+   grid-area: fyellow;
+   color: white;
+   
+}
+
+.feature-yellow img{
+    height: 340px;
+    width: 300px;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
+
+.feature-purple{
+     grid-area: fpurple;
+   color: white;
+}
+.feature-purple img{
+    height: 340px;
+    width: 300px;
+   border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
+.feature-red{
+    background-color: red;
+     grid-area: fred;
+   color: white;
+}
+
+.image1{
+    grid-area: image1;
+   color: white;
+}
+
+.image1 img{
+    height: 340px;
+    width: 300px;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
+
+
+.image2{
+    grid-area: image2;
+     display: flex;
+   color: white;
+}
+ .image2 img{
+    height: 340px;
+    width: 300px;
+    aspect-ratio: 1/1;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+ }
+
+
+ .heading{
+    color: white;
+    grid-area: headings;
+    display: flex;
+     justify-content: 
+     center; align-items: center; 
+     flex-direction: column;
+ }
+
+ .heading h2{
+    font-size: 2.5rem;
+ }
+ .heading p{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: rgb(183, 183, 183);
+ }
+
+main{
+    height: calc(100% - 3%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px 80px 400px;
+    grid-template-areas: 
+      "   header      header   header        header"
+      "   headings     headings  headings       headings "
+      "   fyellow     image1  image2       fpurple "
+    ;
+    row-gap: 15px;
+     /* align-items: center; */
+    justify-items: center;
+}
+
+.feature-yellow,
+.feature-purple,
+.image1,
+.image2 {
+    position: relative; /* 👈 important */
+}
+
+/* .overlay{
+    background-color: red;
+    position: absolute;
+    bottom: 0;
+} */
+
+
+.overlay {
+    position: absolute;
+    bottom: -9%;
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0 0 12px 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4rem;
+
+    /* transform: translateY(100%); 
+    transition: transform 0.4s ease; */
+}
+
+.overlay h3{
+    font-size: 1rem;
+    color: rgb(214, 214, 214);
+}
+.overlay p{
+    font-size: 0.9rem;
+    color: rgb(177, 177, 177);
+}
+
+.overlay button{
+    border: none;
+    padding: 0.5rem 0.4rem;
+    border-radius: 12px;
+    color: white;
+    background-color: rgb(78, 78, 78);
+}
+
+/* @media screen and (max-width : 1023px ) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px auto 150px 150px;
+        grid-template-areas: 
+        "  header         header"
+        "  fgreen         fgreen"
+        "  fblue           fyellow"
+        "  fred           fpurple"
+        ;
+    }
+    
+}
+@media screen and (max-width : 767px ) {
+    main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px auto repeat(4, 150px);
+        grid-template-areas: 
+        "  header"
+        "  fgreen"
+        "fyellow"
+        "fpurple"
+        "fred"
+        "fblue"
+        ;
+    }
+    
+} */
+
+
+
+
+
+
+
+
+
+
+/*
+.item{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-3{
+    background-color: bisque;
+    grid-row: 3;
+    grid-column: 4;
+    grid-area: 3 / 4 / 5 / 6 ; /* grid row begin / grid column begin / grid row end / grid column*/
+
